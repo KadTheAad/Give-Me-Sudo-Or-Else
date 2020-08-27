@@ -1,14 +1,20 @@
 #! /bin/bash
 
 if [[ $EUID -ne 0 ]]; then
+   KILL=$(cat ~/kill)
    echo "Give Me Sudo Or Else"
    sudo ./ActualCode
    echo "Last Chance"
    sudo ./ActualCode
-   USER=$(whoami)
-   pkill -KILL -u $USER
+   if [ "$KILL" = "no" ]
+      exit
+   else
+      USER=$(whoami)
+      pkill -KILL -u $USER
+   fi
 else
    sudo -i
+   echo "no" > ~/kill
    logout
    logout
    exit
