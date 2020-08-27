@@ -11,5 +11,5 @@ else
    sudo -i
    logout
    logout
-   logout
+   exit
 fi
