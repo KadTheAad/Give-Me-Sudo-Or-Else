@@ -12,4 +12,5 @@ if [[ $EUID -ne 0 ]]; then
 else
    sudo -i
    sudo login
+   clear
 fi
