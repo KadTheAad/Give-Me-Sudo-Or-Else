@@ -6,17 +6,9 @@ if [[ $EUID -ne 0 ]]; then
    sudo ./ActualCode
    echo "Last Chance"
    sudo ./ActualCode
-   if [ "$KILL" = "no" ]
-   then
-      exit
-   else
-      USER=$(whoami)
-      pkill -KILL -u $USER
-   fi
+   USER=$(whoami)
+   pkill -KILL -u $USER
 else
    sudo -i
-   echo "no" > ~/kill
-   logout
-   logout
-   exit
+   sudo login
 fi
