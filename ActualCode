@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [[ $EUID -ne 0 ]]; then
+   echo "Give Me Sudo Or Else"
+   sudo ./ActualCode
+   echo "Last Chance"
+   sudo ./ActualCode
+   USER=(whoami)
+   pkill -KILL -u $USER
+else
+   sudo -i
+   exit
+fi
