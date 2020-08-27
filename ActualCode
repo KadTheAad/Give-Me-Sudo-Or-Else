@@ -3,7 +3,6 @@
 clear
 
 if [[ $EUID -ne 0 ]]; then
-   KILL=$(cat ~/kill)
    echo "Give Me Sudo Or Else"
    sudo ./ActualCode
    echo "Last Chance"
